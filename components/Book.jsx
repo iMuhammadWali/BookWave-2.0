@@ -1,29 +1,63 @@
 import COLORS from 'constants/colors';
-import { StatusBar } from 'expo-status-bar';
-import { Button, FlatList, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import { Button, StyleSheet, Text, Image, View, ToastAndroid, TouchableOpacity } from 'react-native';
+import MyButton from './MyButton';
 
-import { TextInput, ToastAndroid } from 'react-native';
+export default function Book({book}){
+  const showToast = () =>{
+    ToastAndroid.show("Clicked", ToastAndroid.SHORT);
+  }
 
+  return (
+  <View style={styles.container}>
 
-export default function Book({item}){
-    return <View style={bookStyles.container}>
-            <Text style={bookStyles.text}>{item}</Text>
-          </View>
+        <Image source={{uri:'https://img.freepik.com/free-vector/red-text-book-closed-icon_18591-82397.jpg?semt=ais_incoming&w=740&q=80'}}
+          style={styles.image}
+        />
+
+        <View style={styles.infoContainer}>
+
+          <Text style={styles.title}>{book.title}</Text>
+
+          <Text style={styles.author}>{book.author}</Text>
+
+            <View style={{flexDirection:'row', gap:8
+           }}>
+              <MyButton buttonBackgroundColor={COLORS.red} textColor={COLORS.white} text={"Read"} borderRadius={20}/>
+              <MyButton buttonBackgroundColor={COLORS.white} textColor={COLORS.black} text={"Download"} borderRadius={20}/>
+            </View>
+
+        </View>
+    </View>
+  )
 }
 
-const bookStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container:{
-    // width:'100%',
-    height:'auto',
-    padding: 20,
+    height:'130',
+    alignItems:'center',
+    padding: 10,
     borderColor:'black',
     backgroundColor: COLORS.grey,
     marginBottom:5,
-    borderRadius:20,
-    marginLeft:10,
-    marginRight:10
+    borderRadius:15,
+    flexDirection:'row'
+  },
+  image: {
+    width: 80,
+    height: 100,
+  },
+  infoContainer:{
+    marginLeft:10, flexDirection:'column', flex:1, height:'100%', gap:8
+  },
+  title:{
+    color:'white',
+    fontSize:16
+  },
+  author:{
+    color:'white',
+    fontSize:10
   },
   text:{
-    color:'white'
-  }
+  },
+
 });

@@ -1,13 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import { Button, FlatList, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-
-import { TextInput, ToastAndroid } from 'react-native';
 import COLORS from 'constants/colors';
-import Book from 'components/Book';
 import BookList from 'components/BookList'
 
 const Home = () => {
-    const books = ["Art of War", "Atomic Habits", "Sapiens", "Art of War", "Atomic Habits", "Sapiens", "Art of War", "Atomic Habits", "Sapiens","Art of War", "Atomic Habits", "Sapiens","Art of War", "Atomic Habits", "Sapiens"]
+    const books = [
+        {title:"Model for writers", author:"John Doe"},
+        {title:"Atomic Habits", author:"James Clear"},
+        {title:"48 laws of Power", author:"Robert Green"}
+    ]
 
     return (
         <View style={styles.container}>
@@ -22,7 +22,9 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection:'column',
-    backgroundColor:COLORS.black
+    backgroundColor:COLORS.black,
+    paddingHorizontal:10,
+    height:'100%'
   },
   text:{
     fontSize:15,
