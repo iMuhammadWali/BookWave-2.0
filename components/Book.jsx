@@ -1,4 +1,4 @@
-import COLORS from 'constants/colors';
+import COLORS from '../constants/colors';
 import { Button, StyleSheet, Text, Image, View, ToastAndroid, TouchableOpacity } from 'react-native';
 import MyButton from './MyButton';
 

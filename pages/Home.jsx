@@ -1,6 +1,6 @@
 import { Button, FlatList, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-import COLORS from 'constants/colors';
-import BookList from 'components/BookList'
+import COLORS from '../constants/colors';
+import BookList from '../components/BookList'
 
 const Home = () => {
     const books = [

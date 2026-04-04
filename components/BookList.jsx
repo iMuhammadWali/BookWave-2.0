@@ -1,5 +1,5 @@
 import { Button, FlatList, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-import Book from 'components/Book';
+import Book from '../components/Book';
 
 const BookList = ({books}) =>{
     return (
